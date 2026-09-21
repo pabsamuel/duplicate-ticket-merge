@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Duplicate Ticket Merge for Zoho Desk</title>
+  <meta name="description" content="Find duplicate Zoho Desk tickets by contact or subject and merge them in batches, with a preview first.">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site">
+    <a class="brand" href="index.html"><img src="img/icon.png" alt="" width="32" height="32">Duplicate Ticket Merge</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="guide.html">Guide</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <p class="meta">Zoho Desk extension · Standard, Professional and Enterprise</p>
+    <h1>Find duplicate tickets and merge them in batches — with a preview first.</h1>
+    <p class="lead">Duplicate tickets split conversations, inflate your ticket counts and waste agent time. Zoho Desk merges up to five tickets at a time, and finding the duplicates is still manual. This extension does the finding for you.</p>
+    <p class="note"><strong>Status: private beta.</strong> The extension is not listed on Zoho Marketplace yet. If your team deals with duplicate tickets, email <a href="mailto:atesen.media@protonmail.com?subject=Duplicate%20Ticket%20Merge%20beta">atesen.media@protonmail.com</a> to try it free during the beta.</p>
+    <p><a class="cta" href="mailto:atesen.media@protonmail.com?subject=Duplicate%20Ticket%20Merge%20beta">Join the beta</a></p>
+
+    <h2>What it does</h2>
+    <ul class="features">
+      <li><strong>Duplicates panel on every ticket</strong>Open a ticket and see other open tickets from the same contact, or with a similar subject, in the same department.</li>
+      <li><strong>Department scan</strong>Find every duplicate group from the last 7, 14 or 30 days and merge the groups you choose in one run.</li>
+      <li><strong>Preview, then an audit note</strong>Nothing changes until you confirm. A private note on the master ticket records what was merged, by whom and why.</li>
+      <li><strong>No code, no server</strong>Works on Standard and Professional without custom functions. The extension calls the Zoho Desk API from your browser; your ticket data never leaves Zoho.</li>
+    </ul>
+
+    <figure>
+      <img src="img/panel.png" alt="Side panel listing two likely duplicates of the open ticket, each with a match reason, and a Merge button" width="340" height="600" loading="lazy">
+      <figcaption>The ticket panel (demo data).</figcaption>
+    </figure>
+    <figure>
+      <img src="img/scanner.png" alt="Department scan showing duplicate groups with checkboxes, ticket counts and an estimated API credit cost" width="900" height="640" loading="lazy">
+      <figcaption>The department scan (demo data).</figcaption>
+    </figure>
+
+    <h2>How matching works</h2>
+    <p>You choose one rule per scan:</p>
+    <ul>
+      <li><strong>Same contact + similar subject</strong> (default) — the safest rule for most teams.</li>
+      <li><strong>Same contact</strong> — any open ticket from the same requester within the window.</li>
+      <li><strong>Same subject</strong> — identical subject after removing "Re:", "Fwd:" and ticket numbers. Very short or generic subjects ("Help", "Question") are skipped.</li>
+    </ul>
+    <p>Only tickets in the same department are grouped, because Zoho Desk cannot merge across departments. The oldest ticket becomes the master unless you pick another one.</p>
+
+    <h2>Isn't this what Email Deduplication does?</h2>
+    <p>No. Zoho's Email Deduplication stops one email sent to two of your department's addresses from opening two tickets. It does not find duplicates that already exist, and it does not cover the same customer writing twice, a web form plus an email, chat, or an outage flood.</p>
+
+    <h2>Pricing</h2>
+    <p>Planned price after the beta: <strong>$19 per Zoho Desk organization per month</strong>, or $190 per year, billed through Zoho Marketplace with a free trial. Beta users will be told the final price before the beta ends.</p>
+
+    <h2>Good to know</h2>
+    <ul>
+      <li>Zoho Desk merges are permanent. Merged tickets go to the Recycle Bin, where Zoho keeps them for a limited time.</li>
+      <li>Each merge uses Zoho Desk API credits (30 per merge call). The scan shows an estimate before you start.</li>
+      <li>You need permission to merge tickets in Zoho Desk. Admins can turn off <em>Allow merging</em> in the extension settings; the panel and scan keep working.</li>
+    </ul>
+
+  </main>
+  <footer class="site">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="changelog.html">Changelog</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+    <p>Published by Atesen Software · <a href="mailto:atesen.media@protonmail.com">atesen.media@protonmail.com</a></p>
+    <p>Zoho and Zoho Desk are trademarks of Zoho Corporation. This extension is built by Atesen Software and is not made or endorsed by Zoho.</p>
+  </footer>
+</body>
+</html>
