@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User guide — Duplicate Ticket Merge for Zoho Desk</title>
+  <meta name="description" content="How to install, configure and use the Duplicate Ticket Merge extension for Zoho Desk.">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site">
+    <a class="brand" href="index.html"><img src="img/icon.png" alt="" width="32" height="32">Duplicate Ticket Merge</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="guide.html" aria-current="page">Guide</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <h1>User guide</h1>
+    <p class="meta">Duplicate Ticket Merge for Zoho Desk · version 0.1.0</p>
+
+    <h2>1. Install</h2>
+    <ol>
+      <li>Install the extension from Zoho Marketplace (or the private beta link you received).</li>
+      <li>Choose the Zoho Desk portal, then the <strong>departments</strong> and <strong>profiles</strong> whose agents can use it.</li>
+      <li>Authorize the Zoho Desk connection when asked. The extension uses it to read tickets and contacts and to merge tickets; see the <a href="privacy.html">privacy policy</a>.</li>
+    </ol>
+    <p>Agents also need the <strong>Find and Merge</strong> permission in their Zoho Desk profile to merge.</p>
+
+    <h2>2. Settings (admins)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Setting</th><th>Default</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td>Match window (days)</td><td>7</td><td>How far before and after a ticket to look for duplicates.</td></tr>
+          <tr><td>Subject similarity (0.1 to 1)</td><td>0.6</td><td>How similar two subjects must be for the "similar subject" rule. Higher is stricter.</td></tr>
+          <tr><td>Include closed tickets</td><td>Off</td><td>Also match tickets that are already closed.</td></tr>
+          <tr><td>Allow merging</td><td>On</td><td>Turn off to keep the panel, scan and previews but disable every merge button.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>3. Duplicates panel (on a ticket)</h2>
+    <ol>
+      <li>Open a ticket and choose <strong>Duplicate Ticket Merge</strong> in the right panel.</li>
+      <li>The panel lists likely duplicates with the reason for each match. Untick any you don't want.</li>
+      <li>The oldest ticket is the master by default. Click <strong>Use as master</strong> to pick another.</li>
+      <li>Click <strong>Merge … into #…</strong>, check the preview, then click <strong>Merge now</strong>. A private note is added to the master ticket.</li>
+    </ol>
+
+    <h2>4. Department scan (clean-up)</h2>
+    <ol>
+      <li>Open <strong>Duplicate Scanner</strong> from the top band (the icons at the top of Zoho Desk).</li>
+      <li>Pick a department, a window (7, 14 or 30 days) and a rule, then click <strong>Scan</strong>. Up to 1,000 tickets are checked per scan.</li>
+      <li>Review the groups; expand one to see its tickets. Untick the groups you don't want.</li>
+      <li>Click <strong>Review … groups</strong>. The preview shows every group and the estimated API credits. Above 20 tickets you type MERGE to confirm.</li>
+      <li>While it runs you can pause, resume or cancel. Keep the window open until the summary appears; you can copy the summary.</li>
+    </ol>
+
+    <h2>5. Rules</h2>
+    <ul>
+      <li><strong>Same contact + similar subject</strong> (default, safest).</li>
+      <li><strong>Same contact</strong> — groups every open ticket from one requester in the window. Broad: review each group before merging.</li>
+      <li><strong>Same subject</strong> — useful for outage floods. Generic subjects such as "Help" are skipped.</li>
+    </ul>
+
+    <h2>6. API credits</h2>
+    <p>Each merge call uses 30 Zoho Desk API credits, each search or list call 3, each note 1. The preview shows an estimate before you confirm.</p>
+
+    <h2>7. Uninstall</h2>
+    <p>Uninstall the extension from Zoho Desk's Marketplace settings. Its settings are removed. Tickets you merged stay merged; audit notes stay on the master tickets.</p>
+
+  </main>
+  <footer class="site">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="changelog.html">Changelog</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+    <p>Published by Atesen Software · <a href="mailto:atesen.media@protonmail.com">atesen.media@protonmail.com</a></p>
+    <p>Zoho and Zoho Desk are trademarks of Zoho Corporation. This extension is built by Atesen Software and is not made or endorsed by Zoho.</p>
+  </footer>
+</body>
+</html>

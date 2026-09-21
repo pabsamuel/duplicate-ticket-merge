@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — Duplicate Ticket Merge for Zoho Desk</title>
+  <meta name="description" content="How to get help with the Duplicate Ticket Merge extension for Zoho Desk.">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site">
+    <a class="brand" href="index.html"><img src="img/icon.png" alt="" width="32" height="32">Duplicate Ticket Merge</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="guide.html">Guide</a></li>
+        <li><a href="support.html" aria-current="page">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <h1>Support</h1>
+    <p><strong>Email:</strong> <a href="mailto:atesen.media@protonmail.com">atesen.media@protonmail.com</a></p>
+    <p><strong>Response time:</strong> within 1 business day (Monday–Friday, Istanbul time, UTC+3).</p>
+    <p><strong>Critical issues</strong> (the extension blocks your agents or merges incorrectly): put <strong>URGENT</strong> in the subject — we aim to reply within 6 hours. While you wait, an admin can turn off <em>Allow merging</em> in the extension settings; the panel and scan keep working without changing anything.</p>
+
+    <h2>Before you write</h2>
+    <p>Please include:</p>
+    <ul>
+      <li>your Zoho Desk data center (desk.zoho.com / .eu / .in / .com.au / .jp / .ca)</li>
+      <li>the ticket number(s) involved and what you expected to happen</li>
+      <li>a screenshot of any error message</li>
+    </ul>
+    <p>Never send your Zoho password or API tokens.</p>
+
+    <h2>FAQ</h2>
+    <dl>
+      <dt>Can I undo a merge?</dt>
+      <dd>Zoho Desk merges are permanent. The merged (secondary) tickets go to Zoho Desk's Recycle Bin and can be restored from there for a limited period (see Zoho's documentation). That's why every merge shows a preview and adds an audit note to the master ticket.</dd>
+      <dt>Why are merges done in batches?</dt>
+      <dd>Zoho Desk limits how many tickets can be merged at once. The extension merges in batches into the same master ticket.</dd>
+      <dt>Can I merge tickets from different departments?</dt>
+      <dd>No — Zoho Desk only merges tickets within the same department.</dd>
+      <dt>Does my data leave Zoho?</dt>
+      <dd>No. There is no external server. See the <a href="privacy.html">privacy policy</a>.</dd>
+      <dt>Which editions are supported?</dt>
+      <dd>Standard, Professional and Enterprise.</dd>
+      <dt>How many API credits does it use?</dt>
+      <dd>A merge call costs 30 credits, a search or list call 3, a comment 1. Cleaning up 20 duplicate groups uses roughly 1,200 credits. Standard edition includes 50,000 credits a day plus 250 per agent.</dd>
+      <dt>Isn't this what Zoho's Email Deduplication does?</dt>
+      <dd>No. That feature prevents one email sent to several addresses in the same department from creating two tickets. It does not find or merge duplicates that already exist, and it does not cover the same customer writing twice, web forms, chat, or outage floods.</dd>
+      <dt>I see "Your profile can't merge tickets".</dt>
+      <dd>Your Zoho Desk profile needs the Find and Merge permission for tickets. Ask your Zoho Desk admin to check your profile's ticket permissions.</dd>
+    </dl>
+
+    <p>See what changed in each version in the <a href="changelog.html">changelog</a>.</p>
+
+  </main>
+  <footer class="site">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="changelog.html">Changelog</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+    <p>Published by Atesen Software · <a href="mailto:atesen.media@protonmail.com">atesen.media@protonmail.com</a></p>
+    <p>Zoho and Zoho Desk are trademarks of Zoho Corporation. This extension is built by Atesen Software and is not made or endorsed by Zoho.</p>
+  </footer>
+</body>
+</html>
