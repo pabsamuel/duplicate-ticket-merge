@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guide — Bulk Actions Hub for Zoho Desk</title>
+  <meta name="description" content="How to find tickets, preview, apply, revert and use presets.">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site">
+    <a class="brand" href="index.html"><img src="img/icon.png" alt="" width="32" height="32">Bulk Actions Hub</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="guide.html" aria-current="page">Guide</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <h1>Guide</h1>
+    <p class="meta">Bulk Actions Hub for Zoho Desk · Last updated: 2 October 2026</p>
+    <h2>1. Install and authorize</h2>
+    <p>Install from Zoho Marketplace, choose the departments and profiles that may use it, then authorize the Zoho Desk connection when asked. The extension appears as a <strong>Bulk Actions Hub</strong> tab in the top bar (it may sit under the “more” menu if you have many tabs).</p>
+    <h2>2. Find tickets</h2>
+    <p>Choose a department and any of: a Zoho Desk view, status, priority, assignee, channel, created date range. These read live data. <strong>Tag</strong> and <strong>Subject contains</strong> use Zoho search, which returns up to 5,000 tickets and can lag a few minutes behind very recent changes. Untick any ticket you want to leave out.</p>
+    <h2>3. Choose changes</h2>
+    <ul>
+      <li><strong>Field changes</strong>: status, priority, classification, category, assignee and custom fields (pick-list, text, number, date, checkbox). Leave a value empty to clear it.</li>
+      <li><strong>Tags</strong>: add and/or remove, comma separated.</li>
+      <li><strong>Move to department</strong>: runs last, after the other changes.</li>
+      <li><strong>Email reply</strong>: choose the From address and write the message. Placeholders: <code>{{contact.firstName}}</code>, <code>{{contact.lastName}}</code>, <code>{{contact.name}}</code>, <code>{{contact.email}}</code>, <code>{{ticket.number}}</code>, <code>{{ticket.subject}}</code>, <code>{{ticket.status}}</code>, <code>{{agent.name}}</code>, <code>{{department.name}}</code>. Add a fallback after a bar: <code>{{contact.firstName|there}}</code>. Tickets without a contact email are skipped. You can set the status after the reply.</li>
+    </ul>
+    <h2>4. Preview and apply</h2>
+    <p>The preview lists every ticket with old → new values, skips tickets that already match, shows a sample reply and estimates API calls, credits and time. Download the <strong>undo file</strong> here. Above 20 tickets, type <code>APPLY</code> to confirm. Keep the tab open while it runs; you can pause or stop.</p>
+    <h2>5. Undo</h2>
+    <p><strong>Revert this run</strong> sets fields, tags and departments back to their previous values. Later, use <strong>Restore from file</strong> with the result file. Sent emails cannot be unsent, and if someone changed a ticket after your run, restoring overwrites their newer value for those fields.</p>
+    <h2>Presets and history</h2>
+    <p>Save the current changes (and optionally the filters) as a preset; presets are shared with everyone in the portal who uses the extension. <strong>Find &amp; preview</strong> runs the filters and builds the preview — it never applies without your confirmation. History lists who ran what, when and how many tickets changed; ticket contents are not stored.</p>
+    <h2 id="admin-settings">Admin settings</h2>
+    <ul>
+      <li><strong>Allow changes</strong> (on by default): turn off to keep finding, previewing and exporting while blocking every change.</li>
+      <li><strong>Allow bulk replies</strong> (on by default).</li>
+      <li><strong>Max tickets per run</strong>: 1 to 5,000, default 2,000.</li>
+    </ul>
+    <h2>Limits and API credits</h2>
+    <ul>
+      <li>Field changes use Zoho's “update many” endpoint: 50 tickets per call, 1 credit per 2 tickets. Clearing a value and some fields fall back to one call per ticket.</li>
+      <li>Tags, replies and department moves are one call per ticket (1 credit each).</li>
+      <li>The extension sends at most 40 requests per minute, one at a time, to stay inside Zoho's limits. 1,000 tickets with a tag change take about 25 minutes.</li>
+      <li>Closing tickets may email customers if closure notifications are on in your Zoho Desk — try one ticket first.</li>
+      <li>Archived tickets are not supported (Zoho Desk does not allow bulk actions there either).</li>
+    </ul>
+
+  </main>
+  <footer class="site">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="changelog.html">Changelog</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+    <p>Published by Atesen Software · <a href="mailto:support@atesensoftware.com">support@atesensoftware.com</a></p>
+    <p>Zoho and Zoho Desk are trademarks of Zoho Corporation. This extension is built by Atesen Software and is not made or endorsed by Zoho.</p>
+  </footer>
+</body>
+</html>
