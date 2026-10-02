@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Duplicate tickets in Zoho Desk — Duplicate Ticket Merge for Zoho Desk</title>
+  <meta name="description" content="What Zoho Desk does about duplicate tickets, the 5-ticket merge limit, custom functions, and your options.">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site">
+    <a class="brand" href="index.html"><img src="img/icon.png" alt="" width="32" height="32">Duplicate Ticket Merge</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="guide.html">Guide</a></li>
+        <li><a href="duplicate-tickets.html" aria-current="page">Duplicates in Zoho Desk</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <p class="meta">Guide · Zoho Desk · Updated 21 September 2026</p>
+    <h1>Duplicate tickets in Zoho Desk: what Zoho does, and your options</h1>
+    <p class="lead">A customer emails, then fills in the web form, then replies to last month's thread. Three tickets, one problem. This page explains what Zoho Desk does about it out of the box, where the limits are, and the ways teams handle the rest.</p>
+    <p class="note">Disclosure: we build <a href="index.html">Duplicate Ticket Merge</a>, one of the options below. Everything about Zoho's own features links to Zoho's documentation or community.</p>
+
+    <h2>Why duplicates happen</h2>
+    <ul>
+      <li>The same customer writes again before anyone answers ("any update?").</li>
+      <li>A reply loses the ticket number in the subject, so it opens a new ticket.</li>
+      <li>The same issue arrives through two channels: email and web form, or email and chat.</li>
+      <li>An outage: dozens of customers report the same thing within an hour.</li>
+    </ul>
+
+    <h2>1. Merge by hand (every edition)</h2>
+    <p>Select the tickets in the list view and choose <strong>Merge</strong>. Zoho Desk keeps one master ticket and moves the others into it. The limits matter for clean-ups:</p>
+    <ul>
+      <li>At most five tickets per merge (<a href="https://www.zoho.com/desk/resources/usecases/merge-tickets.html">Zoho use case</a>, <a href="https://help.zoho.com/portal/en/kb/desk/ticket-management/actions-in-tickets/articles/merging-tickets">help article</a>).</li>
+      <li>Only tickets in the same department.</li>
+      <li>A merge can't be undone. Status, due date, response times and created time come from the master ticket.</li>
+      <li>Finding the duplicates is up to the agent. Zoho has been asked for bulk merge and duplicate detection for years (<a href="https://help.zoho.com/portal/en/community/topic/add-bulk-ticket-merge-functionality-in-zoho-desk">bulk merge request</a>, <a href="https://help.zoho.com/portal/en/community/topic/zoho-support-duplicate-ticket-detection">duplicate detection thread</a>).</li>
+    </ul>
+
+    <h2>2. Let threading catch replies</h2>
+    <p>Replies that keep the ticket number in the subject are added to the existing ticket. Keep the ticket number in your auto-acknowledgement subject so customers reply into the same ticket. Threading is not perfect: some teams report unrelated emails being attached because their subjects looked alike (<a href="https://help.zoho.com/portal/en/community/topic/desk-incorrectly-merging-similar-tickets">community thread</a>).</p>
+
+    <h2>3. Email Deduplication</h2>
+    <p>Zoho Desk can stop one email sent to two of your support addresses from opening two tickets (<a href="https://help.zoho.com/portal/en/community/topic/email-deduplication-for-zoho-desk">community thread</a>). It does not find duplicates that already exist, and it does not cover a customer writing twice, a web form plus an email, or an outage flood.</p>
+
+    <h2>4. Automate with a custom function (Enterprise)</h2>
+    <p>Zoho's usual answer to "merge duplicates automatically" is a workflow rule that runs a Deluge custom function on each new ticket. Zoho says custom functions are available only in the Enterprise edition (<a href="https://help.zoho.com/portal/en/community/topic/episode-i-exploring-the-world-of-custom-functions-in-zoho-desk">Zoho, May 2025</a>). Things to plan for:</p>
+    <ul>
+      <li>Someone has to write and maintain the script.</li>
+      <li>It acts on new tickets only; it doesn't clean up the duplicates you already have.</li>
+      <li>It merges without anyone looking first, and merges are permanent. A loose rule can merge two different customers' problems.</li>
+    </ul>
+
+    <h2>5. Use an extension</h2>
+    <p><a href="index.html">Duplicate Ticket Merge</a> adds a panel to every ticket that lists likely duplicates (same contact, similar subject, same department), and a department scan for clean-ups. You review a preview, it merges in batches of five, and it writes a private audit note on the master ticket. It works on Standard and Professional without custom functions, and it calls the Zoho Desk API from your browser, so ticket data stays in Zoho.</p>
+
+    <h2>Side by side</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>Manual merge</th><th>Custom function</th><th>Duplicate Ticket Merge</th></tr></thead>
+        <tbody>
+          <tr><td>Editions</td><td>All</td><td>Enterprise</td><td>Standard, Professional, Enterprise</td></tr>
+          <tr><td>Finds duplicates for you</td><td>No</td><td>New tickets only</td><td>New and existing</td></tr>
+          <tr><td>Preview before merging</td><td>You pick each ticket</td><td>No</td><td>Yes</td></tr>
+          <tr><td>More than 5 tickets</td><td>Repeat by hand</td><td>Script handles it</td><td>Batches of 5 automatically</td></tr>
+          <tr><td>Audit trail</td><td>Ticket history</td><td>If you script it</td><td>Private note on the master</td></tr>
+          <tr><td>Cost</td><td>Included</td><td>Enterprise plan + script time</td><td>$19 per organization per month, 15-day trial</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>A simple routine that works</h2>
+    <ol>
+      <li>Keep the ticket number in every auto-reply subject.</li>
+      <li>Once a week, scan each department for the last 7 days and merge what the preview confirms.</li>
+      <li>During an outage, scan by <em>same subject</em> and merge each wave into one master ticket, then reply once.</li>
+    </ol>
+    <p>Questions or corrections: <a href="mailto:support@atesensoftware.com">support@atesensoftware.com</a>.</p>
+
+  </main>
+  <footer class="site">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="duplicate-tickets.html">Duplicates in Zoho Desk</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="changelog.html">Changelog</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+    <p>Published by <a href="https://atesensoftware.com/">Atesen Software</a> · <a href="mailto:support@atesensoftware.com">support@atesensoftware.com</a></p>
+    <p>Zoho and Zoho Desk are trademarks of Zoho Corporation. This extension is built by Atesen Software and is not made or endorsed by Zoho.</p>
+  </footer>
+</body>
+</html>
